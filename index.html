@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Películas</title>
-  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Películas</title>
+  <link rel="stylesheet" href="assets/style/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="movies-container"></div>
+  <header>
+    <nav>
+      <img src="logo.png" alt="Logo" class="logo">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Catálogo</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
-    
-    <script src="/proyectoU3/assets/js/script.js"></script>
+    <div class="hero">
+      <h1>Explora el Mundo del Cine</h1>
+      <p>Descubre tus películas favoritas</p>
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Buscar película..." required>
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </header> 
+
+  <main>
+    <section class="description-section">
+      <h2>Descubre un nuevo mundo de entretenimiento</h2>
+      <p>Encuentra información detallada sobre miles de películas de todo tipo, y mantente al día con los últimos estrenos y películas más populares.</p>
+    </section>
+
+    <div id="movies-container"></div>
+  </main>
+
+  <footer>
+    <p>API proporcionada por <a href="https://www.omdbapi.com/" target="_blank">OMDb API</a></p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

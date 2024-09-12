@@ -1,19 +1,17 @@
 $(document).ready(function() {
-    const apikey = 'efb82061'; // Tu clave API
-    const query = 'monster high'; // Lo que estás buscando
+    const apikey = 'efb82061'; 
+    const query = obtenerConsulta(); 
     const url = `https://www.omdbapi.com/?apikey=${apikey}&s=${query}`;
 
-    // Hacemos la solicitud con jQuery
     $.ajax({
-        url: url,
         type: 'GET',
+        url: url,
+        datatype: 'json',
+        async: true,
         success: function(data) {
-            // Verificamos si la respuesta es correcta
-            if (data.Response === "True") {
+            
                 mostrarPeliculas(data.Search);
-            } else {
-                console.log("Error: " + data.Error);
-            }
+           
         },
         error: function(error) {
             console.log("Error en la solicitud", error);
@@ -22,17 +20,23 @@ $(document).ready(function() {
         
     });
 
-    // Función para mostrar las películas en el HTML
+    function obtenerConsulta() {
+        
+        let consulta = prompt("Ingresa el término de búsqueda:", "Barbie");
+        return consulta 
+    }
+
     function mostrarPeliculas(peliculas) {
+      
         console.log(peliculas)
         const moviesContainer = $('#movies-container');
-        moviesContainer.empty(); // Limpiar cualquier contenido previo
+        moviesContainer.empty(); 
 
         peliculas.forEach(function(pelicula) {
-            const poster = pelicula.Poster ; // Si no hay imagen, usamos una por defecto
+            const poster = pelicula.Poster ; 
             const movieTitle = pelicula.Title ;
 
-            // Agregar cada película al contenedor
+           
             const movieDiv = `
                 <div class="movie">
                     <img src="${poster}" alt="${movieTitle}">
@@ -42,4 +46,8 @@ $(document).ready(function() {
             moviesContainer.append(movieDiv);
         });
     }
+
+    
+ 
+    
 });

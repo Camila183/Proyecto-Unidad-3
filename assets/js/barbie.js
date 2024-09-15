@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    // Obtener el parámetro de la URL
+    
     const urlParams = new URLSearchParams(window.location.search);
     const categoria = urlParams.get('categoria'); // 'barbie', 'harry+potter', etc.
 
     if (categoria) {
-        $('#titulo-categoria').text(`Películas de ${categoria.replace('+', ' ')}`); // Actualizar el título
+        $('#titulo-categoria').text(`Películas de ${categoria.replace('+', ' ')}`); 
 
-        // Aquí va tu API key
+        
         const apikey = '2ab140cd'; 
-        const query = encodeURIComponent(categoria); // Codificar la consulta
+        const query = encodeURIComponent(categoria); 
         const apiUrl = `https://www.omdbapi.com/?apikey=${apikey}&s=${query}`;
 
         $.ajax({

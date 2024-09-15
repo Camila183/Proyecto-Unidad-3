@@ -120,7 +120,7 @@
   }
   
   /* Contenedor de resultados */
-  #movie-container {
+  #movieS-container {
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

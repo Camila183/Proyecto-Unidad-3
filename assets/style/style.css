@@ -1,171 +1,186 @@
 :root {
-    --primary-color: #6a0dad; /* Morado oscuro */
-    --secondary-color: #b57edc; /* Morado claro */
-    --accent-color: #f8c300; /* Amarillo brillante */
-    --background-color: #f3e5f5; /* Fondo lavanda claro */
-    --text-color: #ffffff; /* Blanco */
-    --shadow-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--primary-color);
-  }
-  
-  /* Navegación */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: var(--primary-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.2em;
-  }
-  
-  .logo {
-    width: 150px;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-image: url('https://tecnautas.cl/wp-content/uploads/2023/01/peliculas.jpeg'); /* Cambia la URL por la imagen que prefieras */
-    background-size: cover;
-    background-position: center;
-    color: var(--text-color);
-    padding: 100px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 60vh;
-  }
-  
-  .hero h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-  }
-  
-  form {
-    display: flex;
-    gap: 10px;
-  }
-  
-  input[type="text"] {
-    padding: 15px;
-    width: 350px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1em;
-    box-shadow: 0px 2px 4px var(--shadow-color);
-  }
-  
-  button {
-    padding: 15px 25px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 4px var(--shadow-color);
-  }
-  
-  button:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-  }
-  
-  /* Sección de Descripción */
-  .description-section {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .description-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .description-section p {
-    font-size: 1.3em;
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--secondary-color);
-  }
-  
-  /* Contenedor de resultados */
-  #movieS-container {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
-  }
-  
-  .movie {
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px var(--shadow-color);
-    text-align: center;
-    color: var(--text-color);
-    transition: transform 0.3s ease;
-  }
-  
-  .movie:hover {
-    transform: translateY(-10px);
-  }
-  
-  .movie img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .movie h2 {
-    margin: 15px 0;
-  }
-  
-  .movie p {
-    margin: 10px 0;
-  }
-  
-  /* Footer */
-  footer {
-    padding: 20px;
-    background-color: var(--primary-color);
-    text-align: center;
-    color: var(--text-color);
-    margin-top: 40px;
-  }
-  
-  a {
-    color: var(--accent-color);
-    text-decoration: none;
-  }
+  --primary-color: #6a0dad; /* Morado oscuro */
+  --secondary-color: #b57edc; /* Morado claro */
+  --accent-color: #f8c300; /* Amarillo brillante */
+  --background-color: #f3e5f5; /* Fondo lavanda claro */
+  --text-color: #ffffff; /* Blanco */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2em;
+}
+
+/* .logo {
+  width: 150px;
+}
+ */
+/* Hero Section */
+.hero {
+  background-image: url('https://tecnautas.cl/wp-content/uploads/2023/01/peliculas.jpeg'); /* Cambia la URL por la imagen que prefieras */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color);
+  padding: 100px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.hero h1 {
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  padding: 15px;
+  width: 350px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  box-shadow: 0px 2px 4px var(--shadow-color);
+}
+
+button {
+  padding: 15px 25px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 4px var(--shadow-color);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+/* Sección de Descripción */
+.description-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.description-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.description-section p {
+  font-size: 1.3em;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--secondary-color);
+}
+
+/* Contenedor de resultados */
+#movie-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.movie {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px var(--shadow-color);
+  text-align: center;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  transform: translateY(-10px);
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movie h2 {
+  margin: 15px 0;
+}
+
+.movie p {
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--text-color);
+  margin-top: 40px;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+
+.menu-horizonal > li:hover{
+  background-color: darksalmon;
+}
+.menu-vertical{
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 200px;
+  background-color: #f3e5f5;
+}
+.menu-horizonal li:hover .menu-vertical{
+  display: block;
+}

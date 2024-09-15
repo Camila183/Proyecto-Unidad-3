@@ -1,6 +1,6 @@
 function generateUrl() {
-    let id = Math.round(1000000 + Math.random() * 9000000);
-    return `https://www.omdbapi.com/?i=tt${id}&plot=short&type=movies&apikey=c42371fd`;
+    let id = Math.floor(Math.random() * 9000000) + 1000000;
+    return `https://www.omdbapi.com/?i=tt${id}&apikey=2ab140cd&type=movie`;
 }
 
 
@@ -23,7 +23,7 @@ function getPic() {
     }
 
 $(document).ready(function() {
-    for (let index = 1; index < 9; index++) {
+    for (let index = 1; index < 4; index++) {
         getPic();
     }
 });

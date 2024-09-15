@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buscador de Películas</title>
   <link rel="stylesheet" href="assets/style/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <header>
@@ -35,13 +34,23 @@
       <p>Encuentra información detallada sobre miles de películas de todo tipo, y mantente al día con los últimos estrenos y películas más populares.</p>
     </section>
 
-    <div id="movies-container"></div>
+    <!-- <div id="movies-container"></div> -->
+
+    <section class="recomendaciones-section">
+        <h2>Recomendaciones del Día</h2>
+        <div id="recomendaciones">
+
+        </div>
+    </section>
   </main>
 
   <footer>
     <p>API proporcionada por <a href="https://www.omdbapi.com/" target="_blank">OMDb API</a></p>
   </footer>
-
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

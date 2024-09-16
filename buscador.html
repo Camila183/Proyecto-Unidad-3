@@ -3,30 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinema Girl</title>
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/style1.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="intro">
-        <h1 class="logo"> 
-            <span class="logo-parts">C</span>
-            <span class="logo-parts">I</span>
-            <span class="logo-parts">N</span>
-            <span class="logo-parts">E</span>
-            <span class="logo-parts">M</span>
-            <span class="logo-parts">A</span>
-            <span class="logo-parts">⭒</span>
-            <span class="logo-parts">G</span>
-            <span class="logo-parts">I</span>
-            <span class="logo-parts">R</span>
-            <span class="logo-parts">L</span>
-        </h1>
-    </div>
-
-    <!--aqui viene el menu-->
+     
+     <!--aqui viene el menu-->
     
-    <header>
+     <header>
         <nav>
             <img src="assets/img/CINEMA.png" alt="cinema" class="cinema">
             <ul class="menu">
@@ -48,11 +33,13 @@
             </ul>
         </nav>
       </header>
-    
-        <div class="hero">
-          <h1>Explora el Mundo del Cine</h1>
-          <p>Descubre tus películas favoritas</p>
-            <a href="buscador.html">Comenzar</a>
+        <div class="hero_nuevo">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Buscar película..." required>
+            <button type="submit">Buscar</button>
+            <h2></h2>
+        <div id="recomendaciones"></div>
+          </form>
         </div>
     
    <!--Aqui es la parte baja de la web-->
@@ -74,6 +61,5 @@
       crossorigin="anonymous"></script>
     <script src="assets/js/intro.js"></script>  
     <script src="assets/js/script.js"></script>
-
 </body>
 </html>

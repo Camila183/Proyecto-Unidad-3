@@ -1,58 +1,67 @@
-// function generateUrl() {
-//     let id = Math.floor(Math.random() * 9000000) + 1000000;
-//     return `https://www.omdbapi.com/?i=tt${id}&apikey=2ab140cd&type=movie`;
-// }
+function generateUrl() {
+    let id = Math.floor(Math.random() * 9000000) + 1000000;
+    return `https://www.omdbapi.com/?i=tt${id}&apikey=ed96ba01&type=movie`;
+}
 
 
-// function getPic() {
-//     $.ajax({
-//     url: generateUrl(),
-//     method: 'GET',
-//     dataType: 'json',
-//     success: function(info) {
-//     if (info.Poster !== 'N/A' && info.Type === 'movie') {
-//     renderPic(info);
-//     } else {
-//     getPic(); // Reintentar si no hay película o cartel válido
-//     }
-//     },
-//     error: function(error) {
-//     console.error('Error al obtener la película:', error);
-//     }
-//     });
-//     }
+function getPic() {
+    $.ajax({
+    url: generateUrl(),
+    method: 'GET',
+    dataType: 'json',
+    success: function(info) {
+    if (info.Poster !== 'N/A' && info.Type === 'movie') {
+    renderPic(info);
+    } else {
+    getPic(); // Reintentar si no hay película o cartel válido
+    }
+    },
+    error: function(error) {
+    console.error('Error al obtener la película:', error);
+    }
+    });
+    }
 
-// $(document).ready(function() {
-//     for (let index = 1; index < 4; index++) {
-//         getPic();
-//     }
-// });
-// function renderPic(data) {
-//     console.log(data);
+$(document).ready(function() {
+    for (let index = 1; index < 4; index++) {
+        getPic();
+    }
+});
+function renderPic(data) {
+    console.log(data);
    
-//     mostrarDatos(data);
-// }
+    mostrarDatos(data);
+}
 
-// function mostrarDatos(info) {
-//     console.log(info);
+function mostrarDatos(info) {
+    console.log(info);
 
-//     const nuevaInfo = info;
-
-   
-//     let posterDiv = $("<div></div>").addClass("recomendaciones");
+    const nuevaInfo = info;
 
    
-//     $("<img>").attr("src", nuevaInfo.Poster).appendTo(posterDiv);
+    let posterDiv = $("<div></div>").addClass("recomendaciones");
 
    
-//     $("<h3></h3>").text(nuevaInfo.Title).appendTo(posterDiv);
-//     $("<p></p>").text(nuevaInfo.Actors).appendTo(posterDiv);
+    $("<img>").attr("src", nuevaInfo.Poster).appendTo(posterDiv);
+
+   
+    $("<h3></h3>")
+    .html(`<a href="movie-details.html?title=${encodeURIComponent(nuevaInfo.Title)}" target="_blank">${nuevaInfo.Title}</a>`)
+    .appendTo(posterDiv);
+    $("<p></p>").text(nuevaInfo.Actors).appendTo(posterDiv);
 
 
-//     $("#recomendaciones").append(posterDiv);
-// }
+    $("#recomendaciones").append(posterDiv);
+}
 
-const apikey = '2ab140cd'; 
+
+
+
+
+
+
+
+const apikey = 'ed96ba01'; 
 
 $(document).ready(function(){
     $("#search-form").submit(function (e) {
@@ -130,7 +139,10 @@ $(document).ready(function(){
 
                 $("<img>").attr("src", movie.Poster !== "N/A" ? movie.Poster : 'https://via.placeholder.com/300x450').appendTo(moviePoster);
                 $("<h3></h3>").text(movie.Year).appendTo(moviePoster);
-                $("<h4></h4>").text(movie.Title.toUpperCase()).appendTo(moviePoster);
+                $("<h4></h4>")
+                .html(`<a href="movie-details.html?title=${encodeURIComponent(movie.Title)}" target="_blank">${movie.Title.toUpperCase()}</a>`)
+                .appendTo(moviePoster);
+            
 
                 movieContainer.append(moviePoster);
             });

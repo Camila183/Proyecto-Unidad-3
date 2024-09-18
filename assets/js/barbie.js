@@ -6,8 +6,7 @@ $(document).ready(function() {
     if (categoria) {
         $('#titulo-categoria').text(`Películas de ${categoria.replace('+', ' ')}`); 
 
-        
-        const apikey = '2ab140cd'; 
+        const apikey = 'ed96ba01'; 
         const query = encodeURIComponent(categoria); 
         const apiUrl = `https://www.omdbapi.com/?apikey=${apikey}&s=${query}`;
 
@@ -39,8 +38,10 @@ $(document).ready(function() {
 
                 const movieDiv = `
                     <div class="movie">
-                        <img src="${poster}" alt="${movieTitle}">
-                        <div class="movie-title">${movieTitle}</div>
+                        <img src="${poster !== "N/A" ? poster : 'https://via.placeholder.com/300x450'}" alt="${movieTitle}">
+                        <div class="movie-title">
+                            <a href="movie-details.html?title=${encodeURIComponent(movieTitle)}" target="_blank">${movieTitle}</a>
+                        </div>
                     </div>
                 `;
                 moviesContainer.append(movieDiv);
